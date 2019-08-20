@@ -138,12 +138,12 @@ sub output_pod_for_mod {
 
   my $name = $mod =~ s/\//_/gr;
 
-  push @output, output_pod_for_use_test("t/0.90/use/$name.t");
+  push @output, output_pod_for_use_test("t/use/$name.t");
 
   my @methods; my @functions; my @routines;
 
   for my $sub (subs($mod)) {
-    my ($data, $type) = output_pod_for_can_test("t/0.90/can/${name}_${sub}.t");
+    my ($data, $type) = output_pod_for_can_test("t/can/${name}_${sub}.t");
     if ($type eq 'function') {
       push @functions, $data;
     }

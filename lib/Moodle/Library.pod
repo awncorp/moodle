@@ -1,0 +1,27 @@
+
+=encoding utf8
+
+=head1 NAME
+
+Moodle
+
+=cut
+
+=head1 ABSTRACT
+
+Moodle Type Library
+
+=cut
+
+=head1 SYNOPSIS
+
+  use Moodle::Library;
+
+=cut
+
+=head1 DESCRIPTION
+
+Moodle::Library is the L<Moodle> type library derived from
+L<Data::Object::Library> which is a L<Type::Library>
+
+=cut

@@ -1,0 +1,84 @@
+
+=encoding utf8
+
+=head1 NAME
+
+Moodle
+
+=cut
+
+=head1 ABSTRACT
+
+Migrations for Mojo DB Drivers
+
+=cut
+
+=head1 SYNOPSIS
+
+  use Moodle;
+  use Mojo::Pg;
+  use App::Migrator;
+
+  my $migrator = App::Migrator->new;
+  my $driver = Mojo::Pg->new('postgresql://postgres@/test');
+
+  my $self = Moodle->new(migrator => $migrator, driver => $driver);
+
+  my $migration = $self->migrate('latest');
+
+=cut
+
+=head1 DESCRIPTION
+
+Moodle uses L<Doodle> with L<Mojo> database drivers to easily install and
+evolve database schema migrations. See L<Doodle::Migrator> for help setting up
+L<Doodle> migrations, and L<Mojo::Pg>, L<Mojo::mysql> or L<Mojo::SQLite> for
+help configuring the DB driver.
+
+=cut
+
+=head1 METHODS
+
+This package implements the following methods.
+
+=cut
+
+=head2 content
+
+  content() : Str
+
+The content method generates DB migration statements using the
+L<Doodle::Migrator> and return a string containing "UP" and "DOWN" versioned
+migration strings suitable for use with the migration feature of L<Mojo>
+database drivers.
+
+=over 4
+
+=item content example
+
+  my $content = $self->content;
+
+=back
+
+=cut
+
+=head2 migrate
+
+  migrate(Maybe[Str] $target) : Object
+
+The migrate method generates DB migration statements using the
+L<Doodle::Migrator> and installs them using one of the L<Mojo> database
+drivers, i.e. L<Mojo::Pg>, L<Mojo::mysql> or L<Mojo::SQLite>. The method
+returns a migration object relative to to the DB driver used.
+
+=over 4
+
+=item migrate example
+
+  my $migrate = $self->migrate;
+
+  my $latest = $self->migrate('latest');
+
+=back
+
+=cut
