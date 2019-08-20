@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Check the repo is in ready-state
+if ! git diff-index --quiet HEAD --; then
+  echo "Uncommitted changes!" && exit 0;
+fi
+
+# Delete existing POD documents
+find lib -type f -name \*.pod -exec rm {} \;
+
+# Regenerate all necessary POD documents
+perl -Ilib bin/pod
+
+# Push generated POD changes
+if ! git diff-index --quiet HEAD --; then
+  git add . && git commit -m 'Updated documentation'
+fi
+
+# Build, Tag, and Push Package Release
+dzil release

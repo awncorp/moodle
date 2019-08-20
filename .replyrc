@@ -1,0 +1,30 @@
+script_line1 = use 5.014
+script_line2 = use strict
+script_line3 = use warnings
+
+[Editor]
+[Interrupt]
+[FancyPrompt]
+[DataDumper]
+[AutoRefresh]
+
+[Colors]
+[Hints]
+[LexicalPersistence]
+[LoadClass]
+[Nopaste]
+[Packages]
+[Pager]
+[ResultCache]
+
+[ReadLine]
+history_file = .repl
+history_length = 100
+
+[Autocomplete::Commands]
+[Autocomplete::Functions]
+[Autocomplete::Globals]
+[Autocomplete::Keywords]
+[Autocomplete::Lexicals]
+[Autocomplete::Methods]
+[Autocomplete::Packages]
