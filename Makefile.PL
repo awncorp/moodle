@@ -24,7 +24,7 @@ my %WriteMakefileArgs = (
     "Data::Object" => "0.99",
     "Doodle" => "0.04"
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t t/can/*.t t/use/*.t"
   }

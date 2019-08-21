@@ -15,14 +15,12 @@ migrate
 
   my $migrate = $self->migrate;
 
-  my $latest = $self->migrate('latest');
-
 =description
 
 The migrate method generates DB migration statements using the
 L<Doodle::Migrator> and installs them using one of the L<Mojo> database
 drivers, i.e. L<Mojo::Pg>, L<Mojo::mysql> or L<Mojo::SQLite>. The method
-returns a migration object relative to to the DB driver used.
+returns a migration object relative to the DB driver used.
 
 =signature
 

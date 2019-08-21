@@ -17,12 +17,12 @@ Migrations for Mojo DB Drivers
 
   use Moodle;
   use Mojo::Pg;
-  use App::Migrator;
+  use Migrator;
 
-  my $migrator = App::Migrator->new;
-  my $driver = Mojo::Pg->new('postgresql://postgres@/test');
+  my $migrator = Migrator->new;
+  my $dbdriver = Mojo::Pg->new('postgresql://postgres@/test');
 
-  my $self = Moodle->new(migrator => $migrator, driver => $driver);
+  my $self = Moodle->new(migrator => $migrator, driver => $dbdriver);
 
   my $migration = $self->migrate('latest');
 

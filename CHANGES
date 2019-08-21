@@ -1,6 +1,11 @@
 Changelog for Moodle
 
-0.01 2019-08-20T15:01:22
+0.02 2019-08-21T07:05:58
+ - Updated documentation
+ - Cosmetic changes
+
+0.01 2019-08-20T15:01:23
+ - Built release version 0.01
  - Updated documentation
  - Disabling Travis targets < 5.22
  - Initial implementation
