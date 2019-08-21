@@ -16,8 +16,8 @@ Migrations for Mojo DB Drivers
 =head1 SYNOPSIS
 
   use Moodle;
-  use Mojo::Pg;
   use Migrator;
+  use Mojo::Pg;
 
   my $migrator = Migrator->new;
   my $dbdriver = Mojo::Pg->new('postgresql://postgres@/test');
@@ -31,7 +31,7 @@ Migrations for Mojo DB Drivers
 =head1 DESCRIPTION
 
 Moodle uses L<Doodle> with L<Mojo> database drivers to easily install and
-evolve database schema migrations. See L<Doodle::Migrator> for help setting up
+evolve database schema migrations. See L<Doodle::Migration> for help setting up
 L<Doodle> migrations, and L<Mojo::Pg>, L<Mojo::mysql> or L<Mojo::SQLite> for
 help configuring the DB driver.
 
@@ -48,7 +48,7 @@ This package implements the following methods.
   content() : Str
 
 The content method generates DB migration statements using the
-L<Doodle::Migrator> and return a string containing "UP" and "DOWN" versioned
+L<Doodle::Migration> and return a string containing "UP" and "DOWN" versioned
 migration strings suitable for use with the migration feature of L<Mojo>
 database drivers.
 
@@ -67,7 +67,7 @@ database drivers.
   migrate(Maybe[Str] $target) : Object
 
 The migrate method generates DB migration statements using the
-L<Doodle::Migrator> and installs them using one of the L<Mojo> database
+L<Doodle::Migration> and installs them using one of the L<Mojo> database
 drivers, i.e. L<Mojo::Pg>, L<Mojo::mysql> or L<Mojo::SQLite>. The method
 returns a migration object relative to the DB driver used.
 
@@ -75,7 +75,7 @@ returns a migration object relative to the DB driver used.
 
 =item migrate example
 
-  my $migrate = $self->migrate;
+  my $migrate = $self->migrate('latest');
 
 =back
 

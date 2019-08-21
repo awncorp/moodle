@@ -28,14 +28,14 @@ method content() {
   my $driver = $self->driver;
   my $migrator = $self->migrator;
 
-  if ($driver->isa('Mojo::mysql')) {
-    $grammar = 'mysql';
-  }
   if ($driver->isa('Mojo::Pg')) {
     $grammar = 'postgres';
   }
   if ($driver->isa('Mojo::SQLite')) {
     $grammar = 'sqlite';
+  }
+  if ($driver->isa('Mojo::mysql')) {
+    $grammar = 'mysql';
   }
 
   my @sql;

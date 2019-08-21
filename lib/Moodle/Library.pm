@@ -2,9 +2,6 @@ package Moodle::Library;
 
 use Data::Object 'Library';
 
-our $Migrator = declare "Migrator",
-  as InstanceOf["Doodle::Migrator"];
-
 our $MysqlDriver = declare "MysqlDriver",
   as InstanceOf["Mojo::mysql"];
 
@@ -16,5 +13,8 @@ our $SqliteDriver = declare "SqliteDriver",
 
 our $Driver = declare "Driver",
   as $MysqlDriver | $PostgresDriver | $SqliteDriver;
+
+our $Migrator = declare "Migrator",
+  as InstanceOf["Doodle::Migration"];
 
 1;

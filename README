@@ -9,8 +9,8 @@ ABSTRACT
 SYNOPSIS
 
       use Moodle;
-      use Mojo::Pg;
       use Migrator;
+      use Mojo::Pg;
     
       my $migrator = Migrator->new;
       my $dbdriver = Mojo::Pg->new('postgresql://postgres@/test');
@@ -22,7 +22,7 @@ SYNOPSIS
 DESCRIPTION
 
     Moodle uses Doodle with Mojo database drivers to easily install and
-    evolve database schema migrations. See Doodle::Migrator for help
+    evolve database schema migrations. See Doodle::Migration for help
     setting up Doodle migrations, and Mojo::Pg, Mojo::mysql or Mojo::SQLite
     for help configuring the DB driver.
 
@@ -35,7 +35,7 @@ METHODS
       content() : Str
 
     The content method generates DB migration statements using the
-    Doodle::Migrator and return a string containing "UP" and "DOWN"
+    Doodle::Migration and return a string containing "UP" and "DOWN"
     versioned migration strings suitable for use with the migration feature
     of Mojo database drivers.
 
@@ -48,11 +48,11 @@ METHODS
       migrate(Maybe[Str] $target) : Object
 
     The migrate method generates DB migration statements using the
-    Doodle::Migrator and installs them using one of the Mojo database
+    Doodle::Migration and installs them using one of the Mojo database
     drivers, i.e. Mojo::Pg, Mojo::mysql or Mojo::SQLite. The method returns
     a migration object relative to the DB driver used.
 
     migrate example
 
-        my $migrate = $self->migrate;
+        my $migrate = $self->migrate('latest');
 
