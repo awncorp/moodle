@@ -1,6 +1,12 @@
 Changelog for Moodle
 
+0.04 2019-10-03T19:38:01
+ - Added release updates
+ - Added missing .github files
+ - Refactored Tests and Docs (#6)
+
 0.03 2019-08-21T19:29:32
+ - Built release version 0.03
  - Updated documentation
  - Refactored to use new Doodle::Migration class
 
