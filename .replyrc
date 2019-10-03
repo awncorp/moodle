@@ -1,7 +1,3 @@
-script_line1 = use 5.014
-script_line2 = use strict
-script_line3 = use warnings
-
 [Editor]
 [Interrupt]
 [FancyPrompt]
@@ -15,11 +11,8 @@ script_line3 = use warnings
 [Nopaste]
 [Packages]
 [Pager]
-[ResultCache]
-
 [ReadLine]
-history_file = .repl
-history_length = 100
+[ResultCache]
 
 [Autocomplete::Commands]
 [Autocomplete::Functions]

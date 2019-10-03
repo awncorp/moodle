@@ -1,6 +1,10 @@
 package Moodle::Library;
 
+use 5.014;
+
 use Data::Object 'Library';
+
+# VERSION
 
 our $MysqlDriver = declare "MysqlDriver",
   as InstanceOf["Mojo::mysql"];

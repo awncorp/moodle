@@ -1,22 +1,28 @@
 /*
 
+!/.github
 !/bin
+!/examples
 !/lib
 !/t
 
 !CHANGES
-!CONTRIBUTING.mkdn
+!CODE_OF_CONDUCT.md
+!CONTRIBUTING.md
 !INSTALL
 !LICENSE
 !Makefile.PL
 !MANIFEST.SKIP
+!OVERVIEW.md
 !README
-!README.mkdn
+!README.md
+!STABILITY.md
+!TEMPLATE
+!VERSION
 !build
 !cpanfile
 !dist.ini
 !release
-!weaver.ini
 
 !.editorconfig
 !.gitattributes
@@ -26,4 +32,3 @@
 !.perlcriticrc
 !.replyrc
 !.replydeps
-!.travis.yml

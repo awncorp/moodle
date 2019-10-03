@@ -4,8 +4,6 @@ use 5.014;
 
 use Data::Object 'Class', 'Moodle::Library';
 
-use Carp;
-
 # VERSION
 
 has driver => (
